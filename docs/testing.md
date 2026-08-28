@@ -1,33 +1,68 @@
 # Testing Plan
 
-## Requester Test
+## Test Strategy
 
-- Open the Network Request catalog item.
-- Verify required fields and dynamic behavior.
-- Submit a valid request.
-- Confirm the request is created successfully.
+Testing covers form validation, dynamic behavior, approval routing, fulfillment, notifications, security, reporting, and end-to-end lifecycle behavior.
 
-## Approval Test
+## Functional Tests
 
-- Confirm the correct approver is selected according to the implemented rules.
-- Confirm the approval notification is generated.
-- Test both approval and rejection paths.
+### Catalog
 
-## Fulfillment Test
+- Verify the catalog item is visible to an authorized requester.
+- Verify required variables cannot be submitted empty.
+- Verify the Device variable appears only for applicable request types.
+- Verify invalid input is rejected with clear feedback.
+- Verify a valid request creates the expected record.
 
-- Approve a request.
-- Confirm the appropriate Network Team receives the fulfillment task.
-- Update the task, add work notes, and complete it.
-- Verify the parent request follows the configured lifecycle.
+### Approval
 
-## Notification Test
+- Verify requests requiring approval reach the correct approval path.
+- Verify the approval notification is generated.
+- Verify approval continues to fulfillment.
+- Verify rejection stops normal fulfillment and notifies the requester.
 
-Verify requester and approver notifications at the configured lifecycle stages.
+### Fulfillment
 
-## Security Test
+- Verify the correct assignment group receives the task.
+- Verify the engineer can update permitted fields and work notes.
+- Verify task completion updates the parent request correctly.
 
-Verify requester, approver, network engineer, and administrator permissions using the implemented roles, groups, ACLs, and catalog access controls.
+### Notifications
 
-## Evidence
+- Verify submission confirmation.
+- Verify approval request.
+- Verify approval outcome.
+- Verify rejection.
+- Verify fulfillment assignment where configured.
+- Verify completion.
 
-Screenshots and exported configuration will be added under `screenshots/` and `update-set/` after each feature is implemented and tested.
+### Reporting
+
+- Verify request records appear in operational reports.
+- Verify filtering/grouping by state and priority.
+- Verify fulfillment workload visibility.
+
+## Security Tests
+
+- Requester permissions
+- Approver permissions
+- Network Engineer permissions
+- Administrator permissions
+- Unauthorized access attempts
+- Restricted field/action access
+
+## End-to-End Test
+
+```text
+Submit -> Validate -> Approve -> Fulfill -> Complete -> Notify -> Report
+```
+
+Also execute:
+
+```text
+Submit -> Validate -> Reject -> Notify -> End
+```
+
+## Evidence Rules
+
+Each passed runtime test should have an evidence record such as a screenshot, test result, or configuration reference. Do not mark a test as passed in GitHub until it has actually been executed in ServiceNow.
