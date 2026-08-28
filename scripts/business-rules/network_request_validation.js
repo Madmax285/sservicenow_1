@@ -1,29 +1,24 @@
 /*
- * ServiceNow Business Rule
- * Name: Network Request - Required Data Validation
- * Table: Network Request
- * When: before
- * Insert: true
- * Update: true
+ * Network Request server-side validation reference.
+ * Configure as a Business Rule on the Network Request table.
+ * Adapt field names only if the final table differs from the documented schema.
  */
 (function executeRule(current, previous) {
-    var missing = [];
-
-    if (gs.nil(current.request_type)) {
-        missing.push('Request type');
-    }
-    if (gs.nil(current.requested_for)) {
-        missing.push('Requested for');
-    }
-    if (gs.nil(current.business_justification)) {
-        missing.push('Business justification');
-    }
-    if (gs.nil(current.priority)) {
-        missing.push('Priority');
-    }
-
-    if (missing.length > 0) {
-        gs.addErrorMessage('Missing required data: ' + missing.join(', ') + '.');
+    if (current.business_justification.nil()) {
+        gs.addErrorMessage('Business justification is required.');
         current.setAbortAction(true);
+        return;
+    }
+
+    if (current.request_type.nil()) {
+        gs.addErrorMessage('Request type is required.');
+        current.setAbortAction(true);
+        return;
+    }
+
+    if (current.access_level.nil()) {
+        gs.addErrorMessage('Access level is required.');
+        current.setAbortAction(true);
+        return;
     }
 })(current, previous);
