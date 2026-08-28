@@ -1,35 +1,46 @@
 # Project Overview
 
 ## Project
-Automated Network Request Management in ServiceNow
+
+**Automated Network Request Management in ServiceNow**
 
 ## Objective
-Automate the end-to-end lifecycle of network-related service requests, reducing manual effort and improving request fulfillment, approval consistency, visibility, and auditability.
+
+Automate the end-to-end lifecycle of network-related service requests, reducing manual effort while improving approval consistency, fulfillment visibility, communication, and auditability.
 
 ## Business Flow
 
 1. Employee submits a Network Request through Service Catalog/Service Portal.
 2. Request details are validated.
-3. Approval routing is determined from the configured request criteria.
-4. Approver receives an automated notification.
-5. Approved requests initiate network fulfillment.
-6. Network Team processes the fulfillment task and records work notes.
-7. Request status progresses through the configured lifecycle.
-8. Requester receives key lifecycle notifications.
-9. Reports/dashboards provide operational visibility.
+3. Dynamic form logic keeps the request relevant and complete.
+4. Approval routing is evaluated.
+5. Approver receives an approval request where required.
+6. Approved work creates or routes fulfillment to the Network Team.
+7. Engineers update work notes and task state.
+8. Request state follows the fulfillment lifecycle.
+9. Requester receives key lifecycle notifications.
+10. Reports and dashboards provide operational visibility.
 
-## Core Skills
+## Core ServiceNow Skills Demonstrated
 
 - Service Catalog
+- Catalog Client Scripts
+- UI Policies
+- Business Rules
+- Script Includes
 - Flow Designer
-- User Administration
-- Roles and ACLs
-- Client-side configuration
+- Approvals
 - Notifications
-- CMDB/configuration tracking where required
+- User/group/role administration
+- ACL and access-control design
 - Reporting and dashboards
-- Update Sets
+- Testing
+- Update Set deployment practices
 
-## Implementation Status
+## Portfolio Goal
 
-The repository is being populated only with components that are actually implemented and tested in the ServiceNow instance. Placeholder documentation is intentionally kept separate from verified configuration.
+The repository is designed to show how a ServiceNow solution is analyzed, designed, scripted, automated, secured, tested, and prepared for deployment.
+
+## Verification Status
+
+The repository contains design and source artifacts. Runtime verification remains dependent on executing the configuration in a ServiceNow instance. No runtime screenshot, test result, or Update Set XML is claimed as verified until it is produced by the actual instance.
