@@ -1,40 +1,38 @@
-# Reporting and Dashboard Design
+# Reporting and Dashboard Specification
 
 ## Operational Reports
 
-### 1. Requests by State
+### 1. Network Requests by State
 
-Purpose: identify backlog and lifecycle distribution.
-
-Suggested grouping: State
+Shows request volume by lifecycle state. Suggested grouping: State.
 
 ### 2. Requests by Priority
 
-Purpose: highlight urgent network work.
+Shows workload distribution across Critical, High, Moderate, and Low priorities. Suggested grouping: Priority.
 
-Suggested grouping: Priority
+### 3. Requests by Type
 
-### 3. Fulfillment by Assignment Group
+Shows demand by network service type. Suggested grouping: Request Type.
 
-Purpose: understand workload handled by the Network Team.
+### 4. Fulfillment by Assignment Group
 
-Suggested grouping: Assignment Group
+Shows workload handled by the Network Team. Suggested grouping: Assignment Group.
 
-### 4. Approval Outcomes
+### 5. Approval Outcomes
 
-Purpose: measure approved versus rejected requests.
+Shows approved versus rejected requests. Suggested grouping: Approval outcome.
 
-Suggested grouping: Approval outcome
+### 6. Approval Aging
 
-### 5. Fulfillment Aging
+Highlights requests waiting for approval beyond the target duration.
 
-Purpose: identify requests that remain in fulfillment for unusually long periods.
+### 7. Fulfillment Aging
 
-Suggested fields: Number, Priority, Assignment Group, Created, State.
+Identifies requests that remain in fulfillment unusually long. Suggested fields: Number, Priority, Assignment Group, Created, State.
 
 ## Dashboard
 
-Recommended dashboard sections:
+Recommended widgets:
 
 - Total open requests
 - Requests awaiting approval
@@ -42,9 +40,12 @@ Recommended dashboard sections:
 - Requests in fulfillment
 - Completed requests
 - Rejected requests
+- Requests by type
+- Requests by priority
+- Fulfillment tasks by assignee
 - Average fulfillment duration
-- SLA-related indicators where SLA configuration exists
+- SLA indicators where SLA configuration exists
 
 ## Implementation Boundary
 
-Report names, filters, encoded queries, and dashboard widgets should be captured from the actual ServiceNow implementation after configuration and testing. This repository currently documents the design rather than claiming runtime evidence.
+Report names, filters, encoded queries, and dashboard widgets should be captured from the actual ServiceNow implementation after configuration and testing. This repository documents the design and does not claim runtime evidence that has not been collected.
