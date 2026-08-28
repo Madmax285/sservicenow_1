@@ -1,0 +1,26 @@
+<!--
+  SAFE TEMPLATE ONLY
+
+  This is NOT a real ServiceNow Update Set export.
+  A real sys_update_set XML must be exported from the configured ServiceNow instance.
+  Do not import this example file into ServiceNow.
+-->
+<update-set-template>
+  <name>Automated Network Request Management</name>
+  <application>Network Request Management</application>
+  <description>Template describing the expected deployment package.</description>
+  <components>
+    <component>Application/table definitions</component>
+    <component>Dictionary fields</component>
+    <component>Roles and ACLs</component>
+    <component>Catalog item and variables</component>
+    <component>Catalog Client Scripts</component>
+    <component>Catalog UI Policies</component>
+    <component>Business Rules</component>
+    <component>Script Includes</component>
+    <component>Flow Designer flow</component>
+    <component>Email notifications</component>
+    <component>Reports and dashboard</component>
+  </components>
+  <status>Replace with actual exported ServiceNow Update Set after runtime testing.</status>
+</update-set-template>
