@@ -1,0 +1,23 @@
+# Secrets and local configuration
+.env
+.env.*
+*.key
+*.pem
+*.p12
+*.pfx
+credentials.*
+secrets.*
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# ServiceNow instance-specific exports that may contain sensitive data
+*.log
+*.bak
+
+# Local test output
+coverage/
+tmp/
