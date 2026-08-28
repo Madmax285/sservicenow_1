@@ -1,12 +1,12 @@
 # Automated Network Request Management in ServiceNow
 
-An end-to-end ServiceNow project for automating network-related service requests, approvals, fulfillment, notifications, and operational tracking.
+An end-to-end ServiceNow application project that automates network-related service requests, approvals, fulfillment, notifications, and operational tracking.
 
-> **Project status:** In progress. This repository is being built alongside the SkillWallet project and will contain only configuration, scripts, documentation, and evidence that are actually implemented and tested in ServiceNow.
+> **Project status:** In progress. This is an independent project built by Madmax285 with ChatGPT. The repository will contain only artifacts that are actually implemented, tested, and documented in ServiceNow.
 
-## Project Objective
+## Objective
 
-Streamline the lifecycle of network-related service requests by reducing manual effort, standardizing approval and fulfillment workflows, improving visibility, and maintaining audit-ready records.
+Build a reliable network-request lifecycle that reduces manual effort, standardizes approvals and fulfillment, improves visibility, and maintains audit-ready records.
 
 ## Target Workflow
 
@@ -17,7 +17,7 @@ Requester
 Network Request Catalog Item
    |
    v
-Request Validation
+Validation + Dynamic Form Logic
    |
    v
 Approval Routing
@@ -42,7 +42,7 @@ Completed
 Requester Notification
    |
    v
-Reports / Dashboards / SLA Tracking
+Reports / Dashboard / SLA Tracking
 ```
 
 ## Planned ServiceNow Components
@@ -50,8 +50,8 @@ Reports / Dashboards / SLA Tracking
 - Service Catalog / Network Request catalog item
 - Catalog variables and form configuration
 - Dynamic client-side behavior
-- User, group, and role configuration
-- Access controls (ACLs)
+- Users, groups, and roles
+- ACL/security controls
 - Approval routing
 - Flow Designer automation
 - Fulfillment task assignment
@@ -59,7 +59,7 @@ Reports / Dashboards / SLA Tracking
 - Request and task lifecycle tracking
 - Reports and dashboards
 - Testing and security validation
-- Update Set export for deployment
+- Update Set deployment artifact
 
 ## Repository Structure
 
@@ -70,6 +70,7 @@ Reports / Dashboards / SLA Tracking
 │   ├── project-overview.md
 │   ├── requirements.md
 │   ├── architecture.md
+│   ├── implementation-plan.md
 │   ├── catalog-item.md
 │   ├── flow-designer.md
 │   ├── security.md
@@ -89,28 +90,25 @@ Reports / Dashboards / SLA Tracking
 └── sample-data/
 ```
 
-## Implementation Notes
+## Implementation Rule
 
-This repository intentionally does **not** contain invented ServiceNow configuration. Configuration files and scripts will be added after the corresponding SkillWallet requirement has been completed and verified in the ServiceNow instance.
+No fabricated ServiceNow configuration will be committed. Scripts, update sets, screenshots, and configuration details will be added only after they exist and have been verified in the ServiceNow instance.
 
-## Testing Goal
+## Definition of Done
 
-The completed implementation should demonstrate:
-
-1. A requester can submit a network request.
-2. The form validates the required information.
-3. The appropriate approval is requested.
-4. Approvers can approve or reject the request.
-5. An approved request creates/initiates fulfillment for the Network Team.
-6. Engineers can process the fulfillment task and add work notes.
-7. Request state progresses correctly.
-8. Requesters receive notifications at important lifecycle stages.
-9. Access is restricted according to the configured roles and ACLs.
-10. Reports/dashboards provide operational visibility.
-
-## SkillWallet Project
-
-This repository supports the **Automated Network Request Management in ServiceNow** project in SkillWallet. The ServiceNow implementation remains the source of truth; GitHub is used for versioned project documentation, scripts/configuration exports, and implementation evidence.
+- Requester can submit a Network Request.
+- Required data is validated.
+- Dynamic form behavior works as intended.
+- Correct approval routing occurs.
+- Approvers can approve/reject.
+- Approved requests generate fulfillment work for the Network Team.
+- Engineers can update work notes and complete tasks.
+- Request state transitions correctly.
+- Requesters receive lifecycle notifications.
+- ACLs/roles enforce the intended access model.
+- Reports/dashboard provide useful operational visibility.
+- End-to-end tests pass.
+- A deployable Update Set is exported and documented.
 
 ## Author
 
